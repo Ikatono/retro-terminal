@@ -1,4 +1,5 @@
-#include "fpng.h"
+#ifndef H_E4B0E8F9E55047EAB5D036235B3A0AAC
+#define H_E4B0E8F9E55047EAB5D036235B3A0AAC
 
 #include <stdint.h>
 #include <vector>
@@ -26,16 +27,6 @@ void set_frame_size(frame_size_t size)
     config = size;
 }
 
-std::vector<char> create_frame(raw_frame_t raw_frame)
-{
-    const char PREFIX[] = "\033[File=Inline=1;Height=";
-    std::array<char, 4> height;
-    std::vector<uint8_t> img;
+std::vector<char> create_frame(raw_frame_t raw_frame);
 
-    fpng::fpng_encode_image_to_memory(raw_frame.data, raw_frame.width, raw_frame.height, 3, img);
-
-    std::vector<char> packed;
-    packed.resize(sizeof(PREFIX) + height.size());
-
-    return packed;
-}
+#endif //H_E4B0E8F9E55047EAB5D036235B3A0AAC

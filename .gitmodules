@@ -1,0 +1,9 @@
+[submodule "SDL"]
+	path = SDL
+	url = https://github.com/libsdl-org/SDL.git
+[submodule "qoixx"]
+	path = qoixx
+	url = https://github.com/wx257osn2/qoixx.git
+[submodule "base64"]
+	path = base64
+	url = https://github.com/tobiaslocker/base64.git
